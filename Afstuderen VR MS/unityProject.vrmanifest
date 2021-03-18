@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.afstuderenvrms.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\P70074699\\Github\\Afstuderen-VR-HBO\\Afstuderen VR MS\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Afstuderen VR MS [Testing]"
+        }
+      }
+    }
+  ]
+}
