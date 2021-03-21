@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Empty
+  - House
+  - Shop
   layers:
   - Default
   - TransparentFX
