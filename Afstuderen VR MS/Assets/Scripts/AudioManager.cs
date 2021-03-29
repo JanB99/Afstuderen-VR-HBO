@@ -1,26 +1,34 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
 
     public static AudioManager instance;
 
-    [System.Serializable]
+    public enum Type
+    {
+        maleVoiceline,
+        femaleVoiceline,
+        environment,
+    }
+
+    [Serializable]
     public class Sound {
 
         public string name;
         public AudioClip clip;
         [Range(0f, 1f)]
-        public float volume;
+        public float volume = 0.5f;
         [Range(0f, 3f)]
-        public float pitch;
+        public float pitch = 1;
         [HideInInspector]
         public AudioSource source;
         public bool loop;
+        public Type type;
     }
 
     
@@ -57,6 +65,20 @@ public class AudioManager : MonoBehaviour
         return null;
     }
 
+    public void IntervalVoicelines(float interval) {
+        InvokeRepeating("PlayRandomVoiceline", interval, interval);
+    }
+
+    void PlayRandomVoiceline() {
+        Type t = MultipleScleroseController.instance.gender == MultipleScleroseController.Gender.female ? Type.femaleVoiceline : Type.maleVoiceline;
+        List<Sound> voiceLines = (from sound in sounds where sound.type == t select sound).ToList();
+        int index = UnityEngine.Random.Range(0, voiceLines.Count);
+
+        voiceLines[index].source.volume = .5f;
+        voiceLines[index].source.Play();
+    }
+
+
     void Awake()
     {
         instance = this;
@@ -68,12 +90,5 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
-    }
-
-
-    void Start()
-    {
-        SetVolume("Rain", .2f);
-        Play("Rain");
     }
 }

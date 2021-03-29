@@ -9,7 +9,7 @@ public class AreaManager : MonoBehaviour
     public static AreaManager instance;
     
     private bool isInside = true;
-    public event Action<bool> onInsideChange;
+    public event Action<bool> OnInsideChange;
 
     void Awake()
     {
@@ -25,10 +25,8 @@ public class AreaManager : MonoBehaviour
     {
         if (other.CompareTag("House") || other.CompareTag("Shop")) {
             isInside = !isInside;
-            onInsideChange(isInside);
-            float amt =  Convert.ToInt32(isInside) * .2f + Convert.ToInt32(!isInside) * .5f;
-            //FindObjectOfType<AudioManager>().SetVolume("Rain", amt);
-            AudioManager.instance.SetVolume("Rain", amt);
+            OnInsideChange(isInside);
+            AudioManager.instance.SetVolume("Rain", isInside ? .2f : .5f);
         }
     }
 }

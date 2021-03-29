@@ -7,6 +7,9 @@ TagManager:
   - Empty
   - House
   - Shop
+  - Billboard
+  - Cemetary
+  - Playground
   layers:
   - Default
   - TransparentFX
