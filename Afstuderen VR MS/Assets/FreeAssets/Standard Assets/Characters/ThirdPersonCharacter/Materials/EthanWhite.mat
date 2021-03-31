@@ -116,7 +116,7 @@ Material:
     - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _SpecColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
     - _SpecularColor: {r: 0.24264705, g: 0.24264705, b: 0.24264705, a: 1}
---- !u!114 &2932166922058404388
+--- !u!114 &812926204843333137
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

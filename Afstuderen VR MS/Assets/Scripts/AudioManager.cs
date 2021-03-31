@@ -70,7 +70,25 @@ public class AudioManager : MonoBehaviour
     }
 
     void PlayRandomVoiceline() {
-        Type t = MultipleScleroseController.instance.gender == MultipleScleroseController.Gender.female ? Type.femaleVoiceline : Type.maleVoiceline;
+        //Type t = MultipleScleroseController.instance.gender == MultipleScleroseController.Gender.female ? Type.femaleVoiceline : Type.maleVoiceline;
+        Type t = Type.femaleVoiceline;
+        switch (MultipleScleroseController.instance.gender)
+        {
+            case MultipleScleroseController.Gender.female:
+                t = Type.femaleVoiceline;
+                break;
+            case MultipleScleroseController.Gender.male:
+                t = Type.maleVoiceline;
+                break;
+        }
+
+        //Type t = MultipleScleroseController.instance.gender switch
+        //{
+        //    MultipleScleroseController.Gender.female => Type.femaleVoiceline,
+        //    MultipleScleroseController.Gender.male => Type.maleVoiceline,
+        //    _ => throw new NotImplementedException(),
+        //};
+
         List<Sound> voiceLines = (from sound in sounds where sound.type == t select sound).ToList();
         int index = UnityEngine.Random.Range(0, voiceLines.Count);
 

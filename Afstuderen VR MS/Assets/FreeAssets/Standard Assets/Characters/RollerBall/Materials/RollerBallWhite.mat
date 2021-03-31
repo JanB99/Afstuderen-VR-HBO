@@ -109,7 +109,7 @@ Material:
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.23529412, g: 0.23529412, b: 0.23529412, a: 1}
     - _SpecularColor: {r: 0.058823526, g: 0.058823526, b: 0.058823526, a: 1}
---- !u!114 &9130731675733482325
+--- !u!114 &5241528394915475296
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

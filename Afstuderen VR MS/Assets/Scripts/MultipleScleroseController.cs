@@ -75,12 +75,14 @@ public class MultipleScleroseController : MonoBehaviour
         }
         RenderSettings.skybox = preset.skybox;
         if (preset.numMistParticles > 0) RenderSettings.fog = true;
-        GameObject.FindGameObjectWithTag("Billboard").SetActive(preset.billboard);
-        //zelfde doen maar dan voor rolstoel
         if (preset.interval > 0) AudioManager.instance.IntervalVoicelines(preset.interval * 60);
 
-        GameObject.FindGameObjectWithTag("Cemetary").gameObject.SetActive(preset.hasCemetary);
-        GameObject.FindGameObjectWithTag("Playground").gameObject.SetActive(!preset.hasCemetary);
+        GameObject.FindGameObjectWithTag("Billboard").SetActive(preset.billboard);
+        GameObject.FindGameObjectWithTag("Wheelchair").SetActive(preset.wheelchair);
+        GameObject.FindGameObjectWithTag("Medicine")?.SetActive(preset.bottles);
+        //zelfde doen maar dan voor rolstoel
+        GameObject.FindGameObjectWithTag("Cemetary")?.gameObject.SetActive(preset.hasCemetary);
+        GameObject.FindGameObjectWithTag("Playground")?.gameObject.SetActive(!preset.hasCemetary);
     }
 
     void EnableOpticNeuritisPreset()

@@ -16,11 +16,6 @@ public class AreaManager : MonoBehaviour
         instance = this;
     }
 
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("House") || other.CompareTag("Shop")) {
