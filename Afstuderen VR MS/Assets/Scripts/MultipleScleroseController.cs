@@ -77,10 +77,10 @@ public class MultipleScleroseController : MonoBehaviour
         if (preset.numMistParticles > 0) RenderSettings.fog = true;
         if (preset.interval > 0) AudioManager.instance.IntervalVoicelines(preset.interval * 60);
 
-        GameObject.FindGameObjectWithTag("Billboard").SetActive(preset.billboard);
-        GameObject.FindGameObjectWithTag("Wheelchair").SetActive(preset.wheelchair);
+        GameObject.FindGameObjectWithTag("Billboard")?.SetActive(preset.billboard);
+        GameObject.FindGameObjectWithTag("Wheelchair")?.SetActive(preset.wheelchair);
         GameObject.FindGameObjectWithTag("Medicine")?.SetActive(preset.bottles);
-        //zelfde doen maar dan voor rolstoel
+        GameObject.FindGameObjectWithTag("Pamphlets")?.SetActive(preset.pamphlet);
         GameObject.FindGameObjectWithTag("Cemetary")?.gameObject.SetActive(preset.hasCemetary);
         GameObject.FindGameObjectWithTag("Playground")?.gameObject.SetActive(!preset.hasCemetary);
     }
