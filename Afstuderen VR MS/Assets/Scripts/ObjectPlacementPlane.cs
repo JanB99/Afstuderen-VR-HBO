@@ -6,19 +6,20 @@ using UnityEngine;
 public class ObjectPlacementPlane : MonoBehaviour
 {
 
-    public static ObjectPlacementPlane instance;
-    public Action OnObjectPlaced;
+    //public static ObjectPlacementPlane instance;
+    //public Action OnObjectPlaced;
 
     public void Awake()
     {
-        instance = this;
+        //instance = this;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Task1Object"))
         {
-            OnObjectPlaced();
+            //OnObjectPlaced();
+            AssignmentManager.instance.Assignment1Complete();
         }
     }
 }

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
-        AssignmentManager.instance.onAssignmentComplete += OnAssignment2Start;
+        AssignmentManager.instance.OnAssignmentComplete += OnAssignment2Start;
     }
 
     void OnAssignment2Start(AssignmentManager.Assignment assignment) {
