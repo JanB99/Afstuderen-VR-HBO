@@ -15,53 +15,59 @@ public class AssignmentManager : MonoBehaviour
 
     public static AssignmentManager instance;
 
-    public event Action<Assignment> OnAssignmentComplete;
-    private Assignment currentAssignment = Assignment.task1;
+    public Action<Assignment> onAssignmentComplete;
+    public Assignment currentAssignment = Assignment.task1;
 
     void Awake()
     {
         instance = this;
+        ObjectPlacementPlane.instance.OnObjectPlaced += Assignment1;
     }
 
-    public void Assignment1Complete() {
-        if (currentAssignment == Assignment.task1) {
-            currentAssignment = Assignment.task2;
-            OnAssignmentComplete(currentAssignment);
-        } 
+    //private void Update()
+    //{
+    //    switch (currentAssignment) {
+    //        case Assignment.task1:
+    //            Assignment1();
+    //            break;
+    //        case Assignment.task2:
+    //            Assignment2();
+    //            break;
+    //        case Assignment.task3:
+    //            Assignment3();
+    //            break;
+    //        case Assignment.task4:
+    //            Assignment4();
+    //            break;
+    //        case Assignment.task5:
+    //            Assignment5();
+    //            break;
+
+    //    }
+    //}
+
+    private void Assignment1() {
+        currentAssignment = Assignment.task2;
+        onAssignmentComplete(currentAssignment);
     }
 
-    public void Assignment2Complete()
+    private void Assignment2()
     {
-        if (currentAssignment == Assignment.task2) {
-            currentAssignment = Assignment.task3;
-            OnAssignmentComplete(currentAssignment);
-        }   
+
     }
 
-    public void Assignment3Complete()
+    private void Assignment3()
     {
-        if (currentAssignment == Assignment.task3)
-        {
-            currentAssignment = Assignment.task4;
-            OnAssignmentComplete(currentAssignment);
-        }
+
     }
 
-    public void Assignment4Complete()
+    private void Assignment4()
     {
-        if (currentAssignment == Assignment.task4)
-        {
-            currentAssignment = Assignment.task5;
-            OnAssignmentComplete(currentAssignment);
-        }
+
     }
 
-    public void Assignment5Complete()
+    private void Assignment5()
     {
-        if (currentAssignment == Assignment.task5)
-        {
-            //currentAssignment = Assignment.task3;
-            //OnAssignmentComplete(currentAssignment);
-        }
+
     }
 }

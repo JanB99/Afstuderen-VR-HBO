@@ -13,9 +13,6 @@ TagManager:
   - Wheelchair
   - Medicine
   - Task1Object
-  - Pamphlets
-  - DoorCollider
-  - Task3Object
   layers:
   - Default
   - TransparentFX
